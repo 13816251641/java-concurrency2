@@ -4,6 +4,11 @@ package chapter1;
  * 阿君喜欢的单例模式
  */
 public class SingletonObject7 {
+
+    private void show(){
+        System.out.println("show");
+    }
+
     private SingletonObject7(){
     }
     private static class InstanceHolder{
@@ -19,8 +24,11 @@ public class SingletonObject7 {
         return InstanceHolder.instance;//外部类可以访问内部类私有的属性及方法
     }
     public static void main(String[] args) {
-        SingletonObject7.getInstance();
-        SingletonObject7.getInstance();
+       /* SingletonObject7.getInstance();
+        SingletonObject7.getInstance();*/
+        SingletonObject7 s = new SingletonObject7();
+        s.show();
+
 
     }
 }
