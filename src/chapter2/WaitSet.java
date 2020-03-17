@@ -31,9 +31,9 @@ public class WaitSet {
 
         IntStream.rangeClosed(1,10).forEach(i->{
             synchronized (LOCK){
-                LOCK.notify();
+                LOCK.notify();//notify不会立即释放锁
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(7_000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

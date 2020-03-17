@@ -1,34 +1,26 @@
 package chapter1;
 
 /**
- * 阿君喜欢的单例模式
+ * effective java 推荐的单例模式,利用枚举类来解决
  */
 public class SingletonObject7 {
-
-    private void show(){
-        System.out.println("show");
-    }
-
     private SingletonObject7(){
     }
-    private static class InstanceHolder{
-        private final static SingletonObject7 instance = new SingletonObject7();
-        static {
-            System.out.println("static代码块");
+
+    private enum Singleoton{
+        INSTANCE;
+        private final SingletonObject7 instance;
+        Singleoton(){
+            instance = new SingletonObject7();
         }
-        public InstanceHolder(){
-            System.out.println("InstanceHolder");
+        public SingletonObject7 getInstance(){
+            return instance;
         }
     }
+
     public static SingletonObject7 getInstance(){
-        return InstanceHolder.instance;//外部类可以访问内部类私有的属性及方法
+        return Singleoton.INSTANCE.getInstance();
     }
-    public static void main(String[] args) {
-       /* SingletonObject7.getInstance();
-        SingletonObject7.getInstance();*/
-        SingletonObject7 s = new SingletonObject7();
-        s.show();
 
 
-    }
 }
