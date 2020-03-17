@@ -6,7 +6,7 @@ package chapter3;
  * 中获取新的值
  */
 public class VolatileTest {
-    private static int INIT_VALUE = 0;
+    private static int INIT_VALUE = 0; //静态变量放在堆中
     private final static int MAX_LIMIT = 5;
 
     public static void main(String[] args) {

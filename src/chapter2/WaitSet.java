@@ -6,9 +6,8 @@ import java.util.stream.IntStream;
 
 /**
  * 1.所有的对象都会有一个wait set,用来存放调用了该对象wait之后进入block状态线程
- * 2.线程被notify之后,不一定立即得到执行
+ * 2.线程被notify之后,不一定立即得到执行,因为它必须要重新获得锁
  * 3.线程从wait set中被唤醒顺序不一定FIFO(先进先出)
- * 4.线程被唤醒后,必须重新获取锁
  */
 public class WaitSet {
     private static final Object LOCK = new Object();
