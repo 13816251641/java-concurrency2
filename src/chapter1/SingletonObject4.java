@@ -9,6 +9,8 @@ package chapter1;
  * a. 给SingletonObject4分配内存
  * b. 在内存中初始化SingletonObject4对象
  * c. 将内存地址赋给SingletonObject4变量（这时SingletonObject4变量就不为null了）
+ *
+ * volatile:读操作在写操作的后面
  */
 public class SingletonObject4 {
     private static SingletonObject4 instance;
