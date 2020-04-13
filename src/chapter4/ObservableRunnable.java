@@ -1,10 +1,12 @@
 package chapter4;
 
+import chapter4.LifeCycleListener;
+
 /**
  * 抽象类,实现了Runnable
  */
 public abstract class ObservableRunnable implements Runnable {
-    final protected LifeCycleListener listener;
+    private LifeCycleListener listener;//一个接口
 
     public ObservableRunnable(final LifeCycleListener listener){
         this.listener = listener;
@@ -18,7 +20,7 @@ public abstract class ObservableRunnable implements Runnable {
         RUNNING,ERROR,DONE;
     }
 
-    protected static class RunnableEvent{
+    public static class RunnableEvent{
         private final RunnableState state;
         private final Thread thread;
         private final Throwable cause;

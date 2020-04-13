@@ -1,4 +1,6 @@
-package chapter4;
+package chapter4.demo;
+
+import chapter4.demo.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,9 @@ public class Subject {
         observers.add(observer);
     }
 
+    /**
+     * 必须private,不然任意Observer的实现类都可以调用
+     */
     private void notifyAllObserver(){
         observers.forEach(Observer::update);
     }
