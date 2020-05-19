@@ -14,15 +14,15 @@ public class WriterWork extends Thread {
     private int index;
 
     public WriterWork(SharedData data,String filter){
-        this.data=data;
-        this.filter=filter;
+        this.data = data;
+        this.filter = filter;
     }
 
     @Override
     public void run() {
         try {
             while (true){
-                char c=nextChar();
+                char c = nextChar();
                 data.write(c);//c是啥buff里面都是c
                 Thread.sleep(random.nextInt(1000));
             }
@@ -32,9 +32,9 @@ public class WriterWork extends Thread {
     }
 
     private char nextChar(){
-        char c=filter.charAt(index);
+        char c = filter.charAt(index);
         index++;
-        if(index>=filter.length()){
+        if(index >= filter.length()){
             index=0;
         }
         return c;

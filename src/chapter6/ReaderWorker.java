@@ -16,7 +16,7 @@ public class ReaderWorker extends Thread {
     public void run() {
         try{
             while (true){
-                char[] readBuf=data.read();//buf里面的全都读取出来
+                char[] readBuf = data.read();//buf里面的全都读取出来
                 System.out.println(Thread.currentThread().getName()+" reads "+String.valueOf(readBuf));
             }
         }catch (InterruptedException e){

@@ -6,7 +6,7 @@ package chapter6;
  */
 public class ReadWriteLockClient {
     public static void main(String[] args) {
-        final SharedData sharedData = new SharedData(10);
+        final SharedData sharedData = new SharedData(10);//10个*
         new ReaderWorker(sharedData).start();
         new ReaderWorker(sharedData).start();
         new ReaderWorker(sharedData).start();

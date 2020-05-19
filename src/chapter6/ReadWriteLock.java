@@ -25,7 +25,7 @@ public class ReadWriteLock {
             /*
                 read被阻塞的条件放宽了
              */
-            while (writingWriters>0 || (preferWriter && waitingWriters>0)){
+            while (writingWriters>0 || (preferWriter && waitingWriters > 0)){
                 this.wait();
             }
             this.readingReaders++;
@@ -39,8 +39,8 @@ public class ReadWriteLock {
     }
 
     public synchronized void writeLock()throws InterruptedException{
-        this.waitingWriters++;
         try{
+            this.waitingWriters++;
             while (writingWriters>0||readingReaders>0){
                 this.wait();
             }
