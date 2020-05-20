@@ -16,7 +16,7 @@ public class RequestQueue {
                 try {
                     queue.wait();//会释放锁
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    return null;
                 }
             }
             return queue.removeFirst();
