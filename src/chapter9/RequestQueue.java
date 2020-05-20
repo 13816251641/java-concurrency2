@@ -1,7 +1,6 @@
 package chapter9;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @Auther lujieni

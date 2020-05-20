@@ -5,7 +5,7 @@ package chapter7.demo1;
  * @Date 2020/4/16
  */
 public class UsePersonThread extends Thread {
-    private Person person;
+    private final Person person;
 
     public UsePersonThread(Person person){
         this.person=person;
