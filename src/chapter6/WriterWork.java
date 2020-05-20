@@ -23,7 +23,7 @@ public class WriterWork extends Thread {
         try {
             while (true){
                 char c = nextChar();
-                data.write(c);//c是啥buff里面都是c
+                data.write(c);//c是什么那么buff里面都是c
                 Thread.sleep(random.nextInt(1000));
             }
         } catch (InterruptedException e) {
@@ -31,6 +31,9 @@ public class WriterWork extends Thread {
         }
     }
 
+    /*
+       遍历filter中的每个字符
+     */
     private char nextChar(){
         char c = filter.charAt(index);
         index++;

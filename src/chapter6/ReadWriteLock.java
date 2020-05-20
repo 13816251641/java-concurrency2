@@ -8,7 +8,7 @@ package chapter6;
 public class ReadWriteLock {
     private int readingReaders=0;//可以有多个
     private int writingWriters=0;//最多只有一个
-    private int waitingWriters=0;
+    private int waitingWriters=0;//增加这个字段是为了保证写优先
     private boolean preferWriter=true;//默认喜欢写
 
     public ReadWriteLock(){
@@ -20,6 +20,9 @@ public class ReadWriteLock {
     }
 
 
+    /*
+        synchronized方法中的变量可见性是值得保证的
+     */
     public synchronized void readLock() throws InterruptedException{
         try{
             /*

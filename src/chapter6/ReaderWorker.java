@@ -9,7 +9,7 @@ public class ReaderWorker extends Thread {
     private final SharedData data;
 
     public ReaderWorker(SharedData data){
-        this.data=data;
+        this.data = data;
     }
 
     @Override

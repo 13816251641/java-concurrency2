@@ -35,7 +35,7 @@ public class SharedData {
     }
 
     private void doWrite(char c){
-        for(int i=0;i<buffer.length;i++){
+        for(int i=0; i< buffer.length;i++){
             buffer[i]=c;
             slowly(10);
         }
