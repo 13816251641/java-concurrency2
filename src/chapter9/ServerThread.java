@@ -23,7 +23,7 @@ public class ServerThread extends Thread {
         /*
             这里线程有3个地方可能被中断
             1.正好读到flag
-            2.queue.getRequest中阻塞被打断返回null
+            2.queue.getRequest中阻塞后被打断返回null
             3.Thread.sleep阻塞返回return
          */
         while (!flag){
