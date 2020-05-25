@@ -6,9 +6,9 @@ package chapter11;
  */
 public class QueryFromHttpAction {
 
-    public void execute(Context context){
-        String name = context.getName();
-        String cardId = getCardId(name);
+    public void execute(){
+        Context context = ActionContext.getInstance().getContext();
+        String cardId = getCardId(context.getName());
         context.setCardId(cardId);
     }
 

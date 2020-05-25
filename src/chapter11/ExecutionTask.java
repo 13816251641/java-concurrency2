@@ -12,11 +12,11 @@ public class ExecutionTask extends Thread {
 
     @Override
     public void run() {
-        Context context = new Context();
-        queryFromDBAction.execute(context);
+        queryFromDBAction.execute();
         System.out.println("The name query successful");
-        queryFromHttpAction.execute(context);
+        queryFromHttpAction.execute();
         System.out.println("The card id query successful");
+        Context context = ActionContext.getInstance().getContext();
         System.out.println("The Name is"+context.getName()+" and CardId is "+context.getCardId());
     }
 }
