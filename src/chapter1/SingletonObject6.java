@@ -24,7 +24,7 @@ public class SingletonObject6 {
         return InstanceHolder.instance;//外部类可以访问内部类私有的属性及方法
     }
     public static void main(String[] args) {
-        SingletonObject6.getInstance();
+        SingletonObject6.getInstance();//InstanceHolder的构造方法并没有执行
         SingletonObject6.getInstance();
 
 /*        SingletonObject6 s = new SingletonObject6();
