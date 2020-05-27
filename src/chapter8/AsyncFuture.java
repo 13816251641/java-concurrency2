@@ -6,7 +6,7 @@ package chapter8;
  */
 public class AsyncFuture<T> implements Future<T> {
 
-    private volatile boolean done = false;
+    private  boolean done = false;//不需要加volatile
 
     private T result;
 
@@ -18,6 +18,10 @@ public class AsyncFuture<T> implements Future<T> {
         }
     }
 
+    /*
+        主线程可以问AsyncFuture要数据,但如果任务还没
+        完成就会阻塞
+     */
     @Override
     public T get() throws InterruptedException {
         synchronized (this){

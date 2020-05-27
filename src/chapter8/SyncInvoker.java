@@ -24,25 +24,24 @@ public class SyncInvoker {
             System.out.println("do other thing");
             Thread.sleep(1_000);
             System.out.println(future.get());
-        */
+         */
 
-       /*
-            异步方式二
-        */
-        futureService.submit(()->{
-            try {
-                Thread.sleep(10_000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return "success";
-        },(result)->{
+           /*
+                异步方式二 执行consumer回调的是工作线程而不是主线程
+            */
+            futureService.submit(()->{
+                try {
+                    Thread.sleep(10_000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return "success";
+            },(result)->{
+                System.out.println(Thread.currentThread().getName());
+                System.out.println(result);
+            });
+            System.out.println("do other thing");
             System.out.println(Thread.currentThread().getName());
-            System.out.println(result);
-        });
-        System.out.println("do other thing");
-        System.out.println(Thread.currentThread().getName());
-
     }
 
     public static String get() throws InterruptedException{
