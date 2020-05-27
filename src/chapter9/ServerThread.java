@@ -11,7 +11,7 @@ public class ServerThread extends Thread {
 
     private final Random random;
 
-    private volatile boolean flag = false;
+    private volatile boolean flag = false;//必须要加,多个线程下的可见性
 
     public ServerThread(RequestQueue queue){
         this.queue = queue;
@@ -44,6 +44,6 @@ public class ServerThread extends Thread {
 
     public void close(){
         this.flag = true;
-        this.interrupt();
+        this.interrupt();//这里稍微关注下
     }
 }
