@@ -15,6 +15,7 @@ public class MessageHandler {
     private final static Executor executor = Executors.newFixedThreadPool(5);
 
     public void request(Message message){
+        /* executor.execute()方法本身就是异步的 */
         executor.execute(()->{
             String value = message.getValue();
             try {
