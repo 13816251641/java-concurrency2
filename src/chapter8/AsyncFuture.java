@@ -6,7 +6,10 @@ package chapter8;
  */
 public class AsyncFuture<T> implements Future<T> {
 
-    private  boolean done = false;//不需要加volatile
+    /*
+      不需要加volatile,因为有synchronized关键字
+     */
+    private boolean done = false;
 
     private T result;
 
