@@ -5,7 +5,7 @@ package chapter18;
  * @Date 2020/6/9
  * 接受异步消息的主动方法
  */
-public class ActiveObject {
+public interface ActiveObject {
 
     Result makeString(int count,char fillChar);
 
