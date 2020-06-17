@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * @Auther lujieni
  * @Date 2020/5/20
+ * 不断处理任务
  */
 public class ServerThread extends Thread {
     private final RequestQueue queue;
@@ -22,9 +23,10 @@ public class ServerThread extends Thread {
     public void run() {
         /*
             这里线程有3个地方可能被中断
-            1.正好读到flag
-            2.queue.getRequest中阻塞后被打断返回null
-            3.Thread.sleep阻塞返回return
+            1.queue.getRequest中阻塞后被打断返回null
+            2.Thread.sleep阻塞返回return
+            3.正好读到flag
+
          */
         while (!flag){
             Request request = queue.getRequest();
@@ -44,6 +46,6 @@ public class ServerThread extends Thread {
 
     public void close(){
         this.flag = true;
-        this.interrupt();//这里稍微关注下
+        this.interrupt();//打断ServerThread这个线程
     }
 }

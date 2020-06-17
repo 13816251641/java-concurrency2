@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * @Auther lujieni
  * @Date 2020/5/20
+ * 客户端,往工作队列中put任务
  */
 public class ClientThread extends Thread {
 

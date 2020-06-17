@@ -5,6 +5,7 @@ import java.util.LinkedList;
 /**
  * @Auther lujieni
  * @Date 2020/5/19
+ * 任务队列,没有设定最大值
  */
 public class RequestQueue {
 

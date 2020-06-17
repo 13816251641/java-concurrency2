@@ -3,12 +3,13 @@ package chapter9;
 /**
  * @Auther lujieni
  * @Date 2020/5/20
+ *
  */
 public class SuspensionClient {
 
     public static void main(String[] args) throws Exception{
         final RequestQueue queue = new RequestQueue();
-        new ClientThread(queue,"Alex").start();
+        new ClientThread(queue,"Alex").start();//往queue中put任务
         ServerThread serverThread = new ServerThread(queue);
         serverThread.start();
 
