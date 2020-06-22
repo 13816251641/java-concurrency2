@@ -3,6 +3,7 @@ package chapter11;
 /**
  * @Auther lujieni
  * @Date 2020/5/25
+ * ExecutionTask就是一个线程
  */
 public class ExecutionTask extends Thread {
 

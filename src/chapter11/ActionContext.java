@@ -7,7 +7,7 @@ package chapter11;
 public class ActionContext {
 
     /*
-       赋初值
+       赋初值,jdk8以后静态变量已存入堆中
      */
     private static final ThreadLocal<Context> threadLocal = new ThreadLocal<Context>(){
         @Override
@@ -17,7 +17,7 @@ public class ActionContext {
     };
 
     /*
-        ActionContext单例
+        申明ActionContext是单例
      */
     private ActionContext(){
 

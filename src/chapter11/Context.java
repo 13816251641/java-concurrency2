@@ -3,6 +3,7 @@ package chapter11;
 /**
  * @Auther lujieni
  * @Date 2020/5/25
+ * 普通bean
  */
 public class Context {
 

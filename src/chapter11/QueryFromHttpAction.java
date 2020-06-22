@@ -3,6 +3,7 @@ package chapter11;
 /**
  * @Auther lujieni
  * @Date 2020/5/25
+ * 模拟http请求
  */
 public class QueryFromHttpAction {
 
@@ -18,7 +19,7 @@ public class QueryFromHttpAction {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "2323212312312321112"+Thread.currentThread().getId();
+        return Thread.currentThread().getName();
     }
 
 }

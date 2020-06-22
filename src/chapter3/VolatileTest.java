@@ -11,13 +11,16 @@ public class VolatileTest {
 
     public static void main(String[] args) {
         new Thread(()->{
-            int localValue = INIT_VALUE;
+          /*  int localValue = INIT_VALUE;
               while (localValue < MAX_LIMIT){
                  if (localValue != INIT_VALUE){
                      System.out.printf("The value updated to [%d]\n",INIT_VALUE);
                      localValue = INIT_VALUE;
                  }
-              }
+              }*/
+             while(true){
+                 System.out.println("Reader:INIT_VALUE="+INIT_VALUE);
+             }
         },"READER").start();
 
         new Thread(()->{
