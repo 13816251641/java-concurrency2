@@ -3,6 +3,7 @@ package chapter18;
 /**
  * @Auther lujieni
  * @Date 2020/6/16
+ * 工作类
  */
 public class Servant implements ActiveObject {
 
