@@ -23,7 +23,7 @@ public class ClassActiveUse {
          1
            调用子类的静态字段,会先初始化父类再初始化子类
            System.out.println(Child.age);
-         */
+        */
 
         /*
          2
@@ -36,13 +36,13 @@ public class ClassActiveUse {
            static final修饰的基本变量不会触发初始化,会在
            编译期间放入常量池
            System.out.println(Obj.age);
-         */
+        */
 
         /*
          4
            Obj.x在编译期间无法得出,所以会导致初始化
          */
-        System.out.println(Obj.x);
+        //System.out.println(Obj.x);
     }
 
 }
