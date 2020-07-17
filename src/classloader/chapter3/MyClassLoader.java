@@ -50,8 +50,7 @@ public class MyClassLoader extends ClassLoader {
 
     private byte[] loadClassBytes(File classFile){
         try(ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            FileInputStream fis = new FileInputStream(classFile);
-            ) {
+            FileInputStream fis = new FileInputStream(classFile)) {
                 byte[] buffer = new byte[1024];
                 int len = 0;
                 while ((len=fis.read(buffer))!=-1){
