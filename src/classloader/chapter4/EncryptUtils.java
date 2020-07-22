@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public final class EncryptUtils {
-    private static final byte ENCRYPT_FACTOR = (byte) 0xff;
+    public static final byte ENCRYPT_FACTOR = (byte) 0xff;
     private EncryptUtils(){
 
     }
@@ -17,8 +17,8 @@ public final class EncryptUtils {
             int content=-1;
             while ((content=fis.read()) != -1){
                 fos.write(content ^ ENCRYPT_FACTOR);
-
             }
+            fos.flush();
         }catch (FileNotFoundException e){
 
         }catch (IOException e){
@@ -28,7 +28,7 @@ public final class EncryptUtils {
     }
 
     public static void main(String[] args) {
-        doEncrypt("f:/a.txt","f:/b.txt");
+        doEncrypt("f:/MyObject.class","f:/a.class");
     }
 
 

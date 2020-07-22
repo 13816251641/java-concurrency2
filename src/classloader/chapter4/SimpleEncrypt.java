@@ -8,7 +8,7 @@ package classloader.chapter4;
  * 0 0 0
  * 0 1 1
  *
- * 2次异或后结果不变
+ * 异或:相同为0 不同为1
  */
 public class SimpleEncrypt {
     private static final String plain = "Hello ClassLoader";
