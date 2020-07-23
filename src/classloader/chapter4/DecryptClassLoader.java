@@ -11,6 +11,14 @@ public class DecryptClassLoader extends ClassLoader{
 
     private String dir = DEFAULT_DIR;
 
+    public String getDir() {
+        return dir;
+    }
+
+    public void setDir(String dir) {
+        this.dir = dir;
+    }
+
     public DecryptClassLoader(){
 
     }
@@ -19,6 +27,12 @@ public class DecryptClassLoader extends ClassLoader{
         super(parent);
     }
 
+    /**
+     * name就是class文件中的包名+类名,必须和class文件中的相一致这点很重要!!!
+     * @param name
+     * @return
+     * @throws ClassNotFoundException
+     */
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         String classPath = name.replace(".","/");
