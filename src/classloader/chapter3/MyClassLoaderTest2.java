@@ -10,6 +10,11 @@ public class MyClassLoaderTest2 {
         MyClassLoader classLoader1 = new MyClassLoader("MyClassLoader-1");
         MyClassLoader classLoader2 = new MyClassLoader("MyClassLoader-2",classLoader1);//这个是亮点
 
+
+        /*
+           MyClassLoader2的dir设置为d盘路径下,但d盘路径下根本没有对应的类,但还是能够加载成功
+           原因就是classLoader2设置了parent为classLoader1,它交给classLoader1去加载了
+         */
         classLoader2.setDir("D:/abc");
         Class<?> aClass = classLoader2.loadClass("classloader.chapter3.MyObject");
         System.out.println(aClass);
