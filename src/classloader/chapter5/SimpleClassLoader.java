@@ -52,7 +52,7 @@ public class SimpleClassLoader extends ClassLoader {
     @Override
     protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
         Class<?> clazz = null;
-        if(name.startsWith("java.")){
+       /* if(name.startsWith("java.")){
             ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
             clazz = systemClassLoader.loadClass(name);
             if(clazz!=null){
@@ -60,7 +60,7 @@ public class SimpleClassLoader extends ClassLoader {
                     resolveClass(clazz);
                 return clazz;
             }
-        }
+        }*/
         try {
             clazz = this.findClass(name);
         } catch (ClassNotFoundException e) {
