@@ -10,17 +10,29 @@ import java.util.Random;
 public class ClassActiveUse {
 
     public static void main(String[] args) throws Exception {
+
         /*
+            new一个对象肯定会执行初始化
             new Obj();
-            System.out.println(I.a);
-        */
-        //System.out.println(Obj.salary);
-        //Obj.printSalary();
-
-        //Class.forName("classloader.chapter1.Obj");
+         */
 
         /*
-         1
+            非final类型的静态变量会执行初始化
+            System.out.println(Obj.salary);
+         */
+
+        /*
+           调用静态方法会执行初始化
+           Obj.printSalary();
+         */
+
+        /*
+          调用Class.forName会执行初始化
+          Class.forName("classloader.chapter1.Obj");
+         */
+
+
+        /*
            调用子类的静态字段,会先初始化父类再初始化子类
            System.out.println(Child.age);
         */
@@ -33,8 +45,7 @@ public class ClassActiveUse {
 
         /*
          3
-           static final修饰的基本变量不会触发初始化,会在
-           编译期间放入常量池
+           static final修饰的基本变量不会触发初始化,会在编译期间放入常量池
            System.out.println(Obj.age);
         */
 

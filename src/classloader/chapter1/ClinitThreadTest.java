@@ -6,8 +6,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * jvm会保证类加载的线程安全
  */
 public class ClinitThreadTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         new Thread(()->new SimpleObject()).start();
+        Thread.sleep(3_000);
         new Thread(()->new SimpleObject()).start();
 
     }
