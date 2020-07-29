@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/**
+ * 继承ClassLoader且一定要实现findClass
+ */
 public class MyClassLoader extends ClassLoader {
 
     private static final String DEFAULT_DIR = "F:\\classloader";
@@ -28,6 +31,7 @@ public class MyClassLoader extends ClassLoader {
     }
 
     /**
+     * 必须重写findClass
      * xxx.xxx.xxx.xxx.AAA
      * xxx/xxx/xxx/xxx/AAA.class
      * @param name
@@ -45,7 +49,7 @@ public class MyClassLoader extends ClassLoader {
         if(null == classBytes || classBytes.length == 0){
             throw new ClassNotFoundException("load the class "+name+" failed");
         }
-        return this.defineClass(name,classBytes,0,classBytes.length);
+        return super.defineClass(name,classBytes,0,classBytes.length);
     }
 
     private byte[] loadClassBytes(File classFile){
@@ -56,7 +60,7 @@ public class MyClassLoader extends ClassLoader {
                 while ((len=fis.read(buffer))!=-1){
                     baos.write(buffer,0,len);
                 }
-                baos.flush();
+                baos.flush();//好习惯
                 return baos.toByteArray();
         } catch (IOException e) {
             e.printStackTrace();

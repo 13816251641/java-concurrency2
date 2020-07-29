@@ -10,6 +10,7 @@ public class RuntimePackage {
         /*
             阿君说加载RuntimePackage的类加载器和加载MyObject的类加载器命名空间不同,
             不同命名空间下的类加载器之间的类互相不可访问
+            AppClassLoader加载器要去加载SimpleClassLoader(子加载器)的东西,当然不被允许
          */
         MyObject myObject = (MyObject)aClass.newInstance();
     }
