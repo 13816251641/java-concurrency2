@@ -11,6 +11,11 @@ package chapter1;
  * c. 将内存地址赋给SingletonObject4变量（这时SingletonObject4变量就不为null了）
  *
  * volatile:读操作在写操作的后面
+ *
+ *
+ * 4是一个复杂的步骤,涉及到给SingletonObject4分配内存,但这时候可能instance不为空但里面
+ * 的参数还没赋值,这样就会有问题
+ *
  */
 public class SingletonObject4 {
     private static SingletonObject4 instance;
